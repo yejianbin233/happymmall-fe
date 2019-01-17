@@ -1,33 +1,9 @@
-webpackJsonp([1],{
+webpackJsonp([3],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(93);
-
-
-/***/ }),
-
-/***/ 93:
-/***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: Administrator
-	* @Date:   2019-01-03 22:26:11
-	* @Last Modified by:   Administrator
-	* @Last Modified time: 2019-01-16 22:06:41
-	*/
-
-
-	'use strict';
-
-	var _mm = __webpack_require__(94);
-	__webpack_require__(98);
-	__webpack_require__(101);
-	var navSide = __webpack_require__(104);
-	navSide.init({
-	    name : 'user-center'
-	});
+	module.exports = __webpack_require__(109);
 
 
 /***/ }),
@@ -947,161 +923,56 @@ webpackJsonp([1],{
 
 /***/ }),
 
-/***/ 98:
+/***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	* @Author: Administrator
-	* @Date:   2019-01-10 21:21:29
+	* @Date:   2019-01-16 21:44:27
 	* @Last Modified by:   Administrator
-	* @Last Modified time: 2019-01-16 20:25:38
+	* @Last Modified time: 2019-01-17 19:55:51
 	*/
 	'use strict';
-	__webpack_require__(99);
+	__webpack_require__(1);
+	__webpack_require__(110);
+	__webpack_require__(112);
+
+
 	var _mm = __webpack_require__(94);
 
+	$(function(){
+	    var type = _mm.getUrlParam('type') || 'default',
+	    $element = $('.' + type + '-success').show();
+	});
 
-	// 通用页面头部
-	var header = {
-	    init : function(){
-	        this.bindEvent(); 
-	    },
-	    //加载页面时,在搜索框里显示url中的关键字
-	    onLoad : function(){
-	        var keyword = _mm.getUrlParam('keyword');
-	        if(keyword){
-	            $('#search-input').val(keyword);
-	        }
-	    },
-	    bindEvent : function(){
-	        var _this = this;
-	        // 点击搜索，做搜索提交
-	        $('#search-btn').click(function(){
-	            _this.searchSubmit();
-	        });
-	        // 直接回车，做搜索提交
-	        $('#search-input').keyup(function(e){
-	            if(e.keyCode === 13){
-	                _this.searchSubmit();
-	            }
-	        });
-	    },
-	    // 搜索提交
-	    searchSubmit : function(){
-	        var keyword = $.trim($('search-input').val());
-	        if(keyword){
-	            window.location.href='./list.html?keyword=' + keyword;
-	        }else{
-	            _mm.goHome();
-	        }
-	    },
-
-	};
-
-	header.init();
 
 /***/ }),
 
-/***/ 99:
+/***/ 110:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 101:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	* @Author: Administrator
-	* @Date:   2019-01-10 19:51:53
+	* @Date:   2019-01-10 19:17:55
 	* @Last Modified by:   Administrator
-	* @Last Modified time: 2019-01-10 20:33:05
+	* @Last Modified time: 2019-01-10 19:19:06
 	*/
 	'use strict';
-	__webpack_require__(102);
+	__webpack_require__(113);
 
 /***/ }),
 
-/***/ 102:
+/***/ 113:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 104:
-/***/ (function(module, exports, __webpack_require__) {
-
-	/*
-	* @Author: Administrator
-	* @Date:   2019-01-16 19:18:34
-	* @Last Modified by:   Administrator
-	* @Last Modified time: 2019-01-16 20:40:16
-	*/
-	/*
-	* @Author: Administrator
-	* @Date:   2019-01-16 19:18:34
-	* @Last Modified by:   Administrator
-	* @Last Modified time: 2019-01-16 20:10:33
-	*/
-	'use strict';
-	__webpack_require__(105);
-	var _mm = __webpack_require__(94);
-	var templateIndex = __webpack_require__(107);
-
-	var navSide = {
-	    option : {
-	        name : '',
-	        navList : [
-	            {name : 'user-center',desc : '个人中心',href : './user-center.html'},
-	            {name : 'order-list',desc : '我的订单',href : './order-list.html'},
-	            {name : 'pass-update',desc : '修改密码',href : './pass-update.html'},
-	            {name : 'about',desc : '关于MMall',href : './about.html'}
-	        ]
-	    },
-
-	    init : function(option){
-	        //将默认定义的 option 与传入的 option 合并
-	        //第一个参数 this.option 会被 第二个参数 option 修改。
-	        $.extend(this.option,option);
-	        this.renderNav();
-	    },
-
-	    //渲染导航菜单
-	    renderNav : function(){
-	        //计算 active 数据
-	        for(var i=0,iLength = this.option.navList.length; i<iLength ;i++){
-	            if(this.option.navList[i].name === this.option.name){
-	                this.option.navList[i].isActive = true;
-	            }
-	        };
-
-	        //渲染 list 数据
-	        var navHtml = _mm.renderHtml(templateIndex,{
-	            navList : this.option.navList
-	        });
-
-	        //把 html 放入容器
-	        $('.nav-side').html(navHtml);
-	    }
-	};
-
-	module.exports = navSide;
-
-/***/ }),
-
-/***/ 105:
-/***/ (function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 107:
-/***/ (function(module, exports) {
-
-	module.exports = "{{#navList}}\r\n    {{#isActive}}\r\n    <li class=\"nav-item active\">\r\n    {{/isActive}}\r\n    {{^isActive}}\r\n    <li class=\"nav-item\">\r\n    {{/isActive}}\r\n        <a class=\"link\" href=\"{{href}}\">{{desc}}</a>\r\n    </li>\r\n{{/navList}}\r\n";
 
 /***/ })
 

@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2019-01-03 21:45:39
 * @Last Modified by:   Administrator
-* @Last Modified time: 2019-01-04 22:37:29
+* @Last Modified time: 2019-01-17 20:13:51
 */
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
@@ -12,9 +12,10 @@ var HtmlWebpackPlugin   = require('html-webpack-plugin');
 var WEBPACK_ENV         = process.env.WEBPACK_ENV || 'dev';
 
 
-var getHtmlConfig = function(name){
+var getHtmlConfig = function(name,title){
     return {
         template    : './src/view/' + name+ '.html',
+        title       : title,
         filename    : 'view/' + name+ '.html',
         inject      : true,
         hash        : true,
@@ -28,6 +29,7 @@ var config  = {
                         'common': ['./src/page/common/index.js'],
                         'index' : ['./src/page/index/index.js'],
                         'login' : ['./src/page/login/index.js'],
+                        'result': ['./src/page/result/index.js'],
     },
 
     output          : {
@@ -36,9 +38,19 @@ var config  = {
                         filename   : 'js/[name].js'
     },
 
+    resolve         : {
+                        alias   : {
+                            util        : __dirname + '/src/util',
+                            page        : __dirname + '/src/page',
+                            service     : __dirname + '/src/service',
+                            image       : __dirname + '/src/image',
+                            node_modules: __dirname + '/node_modules',
+                        }
+    },
     // 外部依赖
-    externals       : {
-                        'jquery' : 'window.jQuery'//引入jquery依赖
+    externals:{
+        '$'         :'window.jQuery',
+        'jquery'    :'window.jQuery'
     },
 
     plugins         : [
@@ -49,9 +61,11 @@ var config  = {
 
                         new ExtractTextPlugin('css/[name].css'),
                         
-                        new HtmlWebpackPlugin(getHtmlConfig('index')),
+                        new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
 
-                        new HtmlWebpackPlugin(getHtmlConfig('login'))
+                        new HtmlWebpackPlugin(getHtmlConfig('login','登录页面')),
+
+                        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
     ],
     module          : {
                         loaders: [
@@ -64,6 +78,12 @@ var config  = {
                                 test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
                                 loader: 'url-loader',
                                 
+                            },
+
+                            //处理 string 的 loader
+                            {
+                                test:/\.string$/, 
+                                loader: 'html-loader'
                             },
                         ]
     }

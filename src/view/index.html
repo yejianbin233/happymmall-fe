@@ -1,8 +1,22 @@
 <!DOCTYPE html>
-<html>
-    <%=require('html-loader!./layout/html-head.html')%>
+<html lang="en">
+    
+    <head>
+      <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js">
+      </script>
+    <%=require('html-loader!./layout/head-common.html')%>
+    <title><%=htmlWebpackPlugin.options.title %></title>
+    </head>
+    <%=require('html-loader!./layout/nav.html') %>
+    <%=require('html-loader!./layout/header.html') %>
     <body>
-        hello webpack-dev-server !!!
+       <div class="page-wrap w">
+           <%=require('html-loader!./layout/nav-side.html') %>
+           <div class="content with-nav">
+               test
+           </div>
+       </div>
     </body>
-    <script type="text/javascript" src="../../dist/index.js"></script>
+    <%=require('html-loader!./layout/foot.html') %>
+
 </html>

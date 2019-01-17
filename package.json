@@ -22,7 +22,10 @@
     "url": "https://github.com/yyyejianbin9527/happymmall-fe/issues"
   },
   "homepage": "https://github.com/yyyejianbin9527/happymmall-fe#readme",
-  "dependencies": {},
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "hogan": "^1.0.2"
+  },
   "devDependencies": {
     "css-loader": "^2.1.0",
     "extract-text-webpack-plugin": "^1.0.1",

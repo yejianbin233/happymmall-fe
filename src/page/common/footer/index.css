@@ -1,0 +1,24 @@
+/*
+* @Author: Administrator
+* @Date:   2019-01-10 20:23:09
+* @Last Modified by:   Administrator
+* @Last Modified time: 2019-01-10 20:43:36
+*/
+.footer{
+    padding-bottom: 10px;
+}
+.footer .links{
+    text-align:center;
+    color:#666;
+    line-height: 30px;
+}
+
+.footer .link{
+    padding: 0 10px;
+}
+
+.footer .copyright{
+    text-align:center;
+    color:#666;
+    line-height: 30px;
+}
