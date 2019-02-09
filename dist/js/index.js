@@ -15,7 +15,7 @@ webpackJsonp([1],{
 	* @Author: Administrator
 	* @Date:   2019-01-03 22:26:11
 	* @Last Modified by:   Administrator
-	* @Last Modified time: 2019-01-16 22:06:41
+	* @Last Modified time: 2019-01-17 20:34:07
 	*/
 
 
@@ -24,6 +24,7 @@ webpackJsonp([1],{
 	var _mm = __webpack_require__(94);
 	__webpack_require__(98);
 	__webpack_require__(101);
+
 	var navSide = __webpack_require__(104);
 	navSide.init({
 	    name : 'user-center'
@@ -39,7 +40,7 @@ webpackJsonp([1],{
 	* @Author: Administrator
 	* @Date:   2019-01-06 20:30:07
 	* @Last Modified by:   Administrator
-	* @Last Modified time: 2019-01-09 20:33:16
+	* @Last Modified time: 2019-01-17 21:01:11
 	*/
 	'use strict';
 
@@ -84,7 +85,7 @@ webpackJsonp([1],{
 	        // ? 号后传递参数（说明从哪个页面跳转进来登录页面）
 	        //方便成功登录后返回原页面
 	        //encodeURIComponent()，编码原地址。
-	        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+	        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
 	    },
 
 	    //获取服务器地址

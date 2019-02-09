@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2019-01-06 20:30:07
 * @Last Modified by:   Administrator
-* @Last Modified time: 2019-01-09 20:33:16
+* @Last Modified time: 2019-01-18 22:10:27
 */
 'use strict';
 
@@ -47,7 +47,7 @@ var _mm = {
         // ? 号后传递参数（说明从哪个页面跳转进来登录页面）
         //方便成功登录后返回原页面
         //encodeURIComponent()，编码原地址。
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
 
     //获取服务器地址
@@ -79,7 +79,7 @@ var _mm = {
     },
 
     //字段的验证，支持非空、手机、邮箱的判断。
-    validate : function(value,type){
+    validata : function(value,type){
         var value = $.trim(value);
 
         //非空验证
@@ -93,7 +93,7 @@ var _mm = {
         }
 
         //邮箱格式验证
-        if('emaill' == type){
+        if('email' == type){
             return /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(value);
         }
     }

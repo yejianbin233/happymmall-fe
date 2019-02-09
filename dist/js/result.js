@@ -1,9 +1,9 @@
-webpackJsonp([3],{
+webpackJsonp([2],{
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(109);
+	module.exports = __webpack_require__(108);
 
 
 /***/ }),
@@ -15,7 +15,7 @@ webpackJsonp([3],{
 	* @Author: Administrator
 	* @Date:   2019-01-06 20:30:07
 	* @Last Modified by:   Administrator
-	* @Last Modified time: 2019-01-09 20:33:16
+	* @Last Modified time: 2019-01-17 21:01:11
 	*/
 	'use strict';
 
@@ -60,7 +60,7 @@ webpackJsonp([3],{
 	        // ? 号后传递参数（说明从哪个页面跳转进来登录页面）
 	        //方便成功登录后返回原页面
 	        //encodeURIComponent()，编码原地址。
-	        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+	        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
 	    },
 
 	    //获取服务器地址
@@ -923,18 +923,18 @@ webpackJsonp([3],{
 
 /***/ }),
 
-/***/ 109:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
 	* @Author: Administrator
 	* @Date:   2019-01-16 21:44:27
 	* @Last Modified by:   Administrator
-	* @Last Modified time: 2019-01-17 19:55:51
+	* @Last Modified time: 2019-01-17 20:23:12
 	*/
 	'use strict';
-	__webpack_require__(1);
-	__webpack_require__(110);
+
+	__webpack_require__(109);
 	__webpack_require__(112);
 
 
@@ -948,14 +948,7 @@ webpackJsonp([3],{
 
 /***/ }),
 
-/***/ 110:
-/***/ (function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 112:
+/***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -965,11 +958,18 @@ webpackJsonp([3],{
 	* @Last Modified time: 2019-01-10 19:19:06
 	*/
 	'use strict';
-	__webpack_require__(113);
+	__webpack_require__(110);
 
 /***/ }),
 
-/***/ 113:
+/***/ 110:
+/***/ (function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 112:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
