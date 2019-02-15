@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2019-01-06 20:30:07
 * @Last Modified by:   Administrator
-* @Last Modified time: 2019-01-18 22:10:27
+* @Last Modified time: 2019-02-12 15:58:40
 */
 'use strict';
 
@@ -96,6 +96,9 @@ var _mm = {
         if('email' == type){
             return /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(value);
         }
+    },
+    goHome : function(){
+        window.location.href = './index.html';
     }
 
 };

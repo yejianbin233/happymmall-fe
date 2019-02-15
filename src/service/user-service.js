@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2019-01-18 19:48:27
 * @Last Modified by:   Administrator
-* @Last Modified time: 2019-02-09 19:45:10
+* @Last Modified time: 2019-02-15 15:09:59
 */
 'use strict';
 var _mm = require('util/mm.js');
@@ -26,6 +26,16 @@ var _user = {
                 type: 'username',
                 str : username
             },
+            method  : 'POST',
+            success : resolve,
+            error   : reject
+        });
+    },
+
+    // 检查登录状态
+    checkLogin : function(resolve, reject){
+        _mm.request({
+            url     : _mm.getServerUrl('/user/get_user_info.do'),
             method  : 'POST',
             success : resolve,
             error   : reject
