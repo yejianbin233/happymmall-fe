@@ -51,7 +51,7 @@ var page = {
             orderDetailHtml = '',
             $content = $('.content');
         $content.html('<div class="loading"></div>');
-        _order.getOrderDetail(this.data.orderNumber,function(){
+        _order.getOrderDetail(this.data.orderNumber,function(res){
             _this.dataFilter(res);
             // 渲染 html
             orderDetailHtml = _mm.rendHtml(templateIndex,res);
