@@ -27,7 +27,7 @@
                             </div>
                             <div class="form-line">
                                 <label class="label" for="receiver-address"><span class="required">*</span>详细地址:</label>
-                                <input class="form-item" id="receiver-adress" placeholder="请精确到门牌号" value="{{data.receiverAddress}}">
+                                <input class="form-item" id="receiver-address" placeholder="请精确到门牌号" value="{{data.receiverAddress}}">
                             </div>
                             <div class="form-line">
                                 <label class="label" for="receiver-phone"><span class="required">*</span>收件人手机:</label>
@@ -38,7 +38,7 @@
                                 <input class="form-item" id="receiver-zip" placeholder="如: 10000" value="{{data.receiverZip}}">
                             </div>
                             <div class="form-line">
-                                <input type="" type="hidden" id="receiver-id" value="{{data.id}}">
+                                <input type="hidden" id="receiver-id" value="{{data.id}}">
                                 <a class="btn address-btn">保存收货地址</a>
                             </div>
                         </div>

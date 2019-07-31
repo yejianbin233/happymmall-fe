@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2019-07-30 18:23:14
 * @Last Modified by:   Administrator
-* @Last Modified time: 2019-07-30 19:15:00
+* @Last Modified time: 2019-07-31 15:09:07
 */
 
 'use strict';
@@ -17,7 +17,7 @@ var templateIndex   = require('./index.string');
 // page 逻辑部分
 var page = {
     data:{
-        orderNumber : _mm.getUrlParam("orderNumber");
+        orderNumber : _mm.getUrlParam("orderNumber")
     },
     init: function(){
         this.onLoad();
