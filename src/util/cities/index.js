@@ -4531,5 +4531,5 @@ var _cities = {
         }
         return cities;
     }
-}
+};
 module.exports = _cities;
