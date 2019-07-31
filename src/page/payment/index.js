@@ -34,7 +34,7 @@ var page = {
         $pageWrap.html('<div class="loading"></div>');
         _payment.getPaymentInfo(this.data.orderNumber,function(res){
             // 渲染 html
-            paymentHtml = _mm.rendHtml(templateIndex,res);
+            paymentHtml = _mm.renderHtml(templateIndex,res);
             $pageWrap.html(paymentHtml);
             _this.listenOrderStatus();
         },function(errMsg){
