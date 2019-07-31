@@ -2,7 +2,7 @@
 * @Author: Administrator
 * @Date:   2019-07-30 17:05:43
 * @Last Modified by:   Administrator
-* @Last Modified time: 2019-07-30 18:27:05
+* @Last Modified time: 2019-07-31 16:23:07
 */
 'use strict';
 require('./index.css');
@@ -38,7 +38,7 @@ var page = {
             orderListHtml = '',
             $listCon = $('.order-list-con');
         $listCon.html('<div class="loading"></div>');
-        _order.getOrderList(this.data.listParam,function(){
+        _order.getOrderList(this.data.listParam,function(res){
             // 渲染 html
             orderListHtml = _mm.renderHtml(templateIndex,res);
             $listCon.html(orderListHtml);

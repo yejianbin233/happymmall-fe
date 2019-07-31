@@ -2,11 +2,11 @@
 * @Author: Administrator
 * @Date:   2019-07-30 14:32:20
 * @Last Modified by:   Administrator
-* @Last Modified time: 2019-07-30 16:32:56
+* @Last Modified time: 2019-07-31 16:00:06
 */
 'use strict';
 var _mm                          = require('util/mm.js');
-var _cities                     = require('util/cities/index.js');
+var _cities                      = require('util/cities/index.js');
 var _address                     = require('service/address-service.js');
 var templateAddressModal         = require('./address-modal.string');
 
@@ -83,7 +83,7 @@ var addressModal = {
         });
     },
     // 加载省份
-    loadProvince : function(){
+    loadProvince : function(){     
         var provinces    = _cities.getProvinces() || [],
             $provinceSelect = this.$modalWrap.find('#receiver-province');
         $provinceSelect.html(this.getSelectOption(provinces));
