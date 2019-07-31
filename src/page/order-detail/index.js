@@ -54,7 +54,7 @@ var page = {
         _order.getOrderDetail(this.data.orderNumber,function(res){
             _this.dataFilter(res);
             // 渲染 html
-            orderDetailHtml = _mm.rendHtml(templateIndex,res);
+            orderDetailHtml = _mm.renderHtml(templateIndex,res);
             $content.html(orderDetailHtml);
         },function(errMsg){
             $content.html('<p class="err-tip">'+errMsg+'</p>');
