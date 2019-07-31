@@ -13,7 +13,7 @@ var _adress = {
         _mm.request({
             url     : _mm.getServerUrl('/shipping/list.do'),
             data    : {
-                pageSize : 50;
+                pageSize : 50
             },
             success : resolve,
             error   : reject

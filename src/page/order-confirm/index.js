@@ -33,7 +33,7 @@ var page = {
         // 地址的选择 / 取消选择
         $(document).on('click', '.address-item', function(){
             $(this).addClass('active')
-                .siblings('/address-item').removeClass();
+                .siblings('.address-item').removeClass();
             _this.data.selectedAddressId = $(this).data('id');
         });
         // 订单提交
@@ -74,7 +74,7 @@ var page = {
                     }
                 });
             },function(errMsg){
-                _mm.errorTips(errMsg):
+                _mm.errorTips(errMsg);
             });
         }),
         // 地址删除
@@ -97,9 +97,9 @@ var page = {
         $('.adress-con').html('<div class="loading"></div>');
         // 获取购物车列表
         _address.getAdressList(function(res){
-            _this.adressFilter(res);
+            _this.addressFilter(res);
             var addressListHtml = _mm.renderHtml(templateAddress,res);
-            $('.address-con').html(AddressListHtml);
+            $('.address-con').html(addressListHtml);
         }, function(errMsg){
             $('.address-con').html('<p class="err-tip">地址加载失败,请刷新后重试</p>');
         })
@@ -127,7 +127,7 @@ var page = {
         var _this       = this;
         $('.product-con').html('<div class="loading"></div>');
         // 获取购物车列表
-        _address.getProductList(function(res){
+        _order.getProductList(function(res){
             var productListHtml = _mm.renderHtml(templateProduct,res);
             $('.product-con').html(productListHtml);
         }, function(errMsg){

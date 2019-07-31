@@ -17,7 +17,7 @@ var templateIndex   = require('./index.string');
 // page 逻辑部分
 var page = {
     data:{
-        orderNumber : _mm.getUrlParam("orderNumber");
+        orderNumber : _mm.getUrlParam("orderNumber")
     },
     init: function(){
         this.onLoad();

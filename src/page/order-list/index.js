@@ -33,14 +33,14 @@ var page = {
         });
     },
     // 加载订单列表
-    loadOrderList : function(){
+    loadOrderList : function(res){
         var _this = this,
             orderListHtml = '',
             $listCon = $('.order-list-con');
         $listCon.html('<div class="loading"></div>');
         _order.getOrderList(this.data.listParam,function(){
             // 渲染 html
-            orderListHtml = _mm.rendHtml(templateIndex,res);
+            orderListHtml = _mm.renderHtml(templateIndex,res);
             $listCon.html(orderListHtml);
             _this.loadPagination({
                 hasPreviousPage : res.hasPreviousPage,

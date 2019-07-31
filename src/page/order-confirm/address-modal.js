@@ -11,7 +11,7 @@ var _address                     = require('service/address-service.js');
 var templateAddressModal         = require('./address-modal.string');
 
 var addressModal = {
-    show : function(){
+    show : function(option){
         // option 的绑定
         this.option = option;
         this.option.data = option.data || {};
@@ -54,7 +54,7 @@ var addressModal = {
                     typeof _this.option.onSuccess === 'function' 
                         && _this.option.onSuccess(res);
                 },function(errMsg){
-                    _mm.errTips(errMsg);
+                    _mm.errorTips(errMsg);
                 });
             } 
             // 更新收货地址,且验证通过
@@ -65,12 +65,12 @@ var addressModal = {
                     typeof _this.option.onSuccess === 'function' 
                         && _this.option.onSuccess(res);
                 },function(errMsg){
-                    _mm.errTips(errMsg);
+                    _mm.errorTips(errMsg);
                 });
             }
             // 验证不通过
             else {
-                _mm.errTips(receiverInfo.errMsg || '哪里不对了~');
+                _mm.errorTips(receiverInfo.errMsg || '哪里不对了~');
             }
         });
         // 保证点击 modal 内容区时,阻止事件冒泡
@@ -108,7 +108,7 @@ var addressModal = {
     },
     // 获取 select 框的选项,输入：array, 输出: html
     getSelectOption : function(optionArray){
-        var html = "<option value=""">请选择</option>";
+        var html = '<option value="">请选择</option>';
         for (var i = 0,length = optionArray.length;i < length;i++) {
             html +='<option value="' + optionArray[i] + '">' + optionArray[i] + '</option>';
         }
