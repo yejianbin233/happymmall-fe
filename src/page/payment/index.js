@@ -32,7 +32,7 @@ var page = {
             paymentHtml     = '',
             $pageWrap        = $('.page-wrap');
         $pageWrap.html('<div class="loading"></div>');
-        _payment.getPaymentInfo(this.data.orderNumber,function(){
+        _payment.getPaymentInfo(this.data.orderNumber,function(res){
             // 渲染 html
             paymentHtml = _mm.rendHtml(templateIndex,res);
             $pageWrap.html(paymentHtml);
